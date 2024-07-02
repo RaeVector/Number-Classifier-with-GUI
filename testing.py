@@ -8,6 +8,7 @@ def cnn_model_test(image):
     image=cv2.bitwise_not(image)
     image=cv2.resize(image,(28,28))
     image=image.reshape(1,28,28,1)
+    image = image/255.0
     image=image.astype('float32')
     pred = model.predict(image)
     
